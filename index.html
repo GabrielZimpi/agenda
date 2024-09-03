@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda | E.T. Gij&oacute;n Acompa&ntilde;a</title>
+  <link rel="stylesheet" type="text/css" href="css/css_index.css">
+  <link rel="stylesheet" type="text/css" href="css/css_calendario.css">
+  <link rel="stylesheet" type="text/css" href="css/css_notitas.css">
+  <script src="js/calendario_script.js" defer></script>
+  <script src="js/notitas_script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <!--Logo de Gijon -->
+    <div class="portadaLogo">
+      <div>
+        <img class="logo" src="imagenes/logo.jpg" alt="Logo Personal" title="Logo Personal">
+      </div>
+      <div>
+        <img class="logo" src="imagenes/logo2.jpg" alt="Logo Personal2" title="Logo Personal2" id="et">
+      </div>
+    </div>
+    <!--Hamburguesa desplegable-->
+    <div class="portadaMenu">
+      <button id="botonHamburguesa" type="button"><span>&#9776;</span></button>
+      <nav id="menu">
+        <ul id="menunav">
+          <li><a >Ejemplo 1</a></li>
+          <li><a id="botonModus">Ejemplo 2</a></li>
+          <li><a >Ejemplo 3</a></li>
+          <li><a >Ejemplo 4</a></li>
+          <li><a >Ejemplo 5</a></li>
+          <li><a >Ejemplo 6</a></li>
+          <li><a >Ejemplo 7</a></li>
+          <li><a >Ejemplo 8</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!--Agenda-->
+  <div class="noticias">
+    <div class="fondo">
+      <div class="norota">
+        <div class="notiTitulo">
+          <div class="divtitle">AGENDA</div>
+        </div>
+      </div>
+    </div>
+    <div class="elementosmain">
+      <div class="calendario">
+        <div class="box">
+          <div class="headerx">
+            <div class="date-container">
+              <div class="current-date" ondblclick="chooseMonth()">
+                <select name="month" id="month">
+                  <option value="0">Enero</option>
+                  <option value="1">Febrero</option>
+                  <option value="2">Marzo</option>
+                  <option value="3">Abril</option>
+                  <option value="4">Mayo</option>
+                  <option value="5">Junio</option>
+                  <option value="6">Julio</option>
+                  <option value="7">Agosto</option>
+                  <option value="8">Septiembre</option>
+                  <option value="9">Octubre</option>
+                  <option value="10">Noviembre</option>
+                  <option value="11">Diciembre</option>
+                </select>
+                <label for="month" class="labNada">nada</label>
+              </div>
+              <div class="current-year" ondblclick="chooseYear()">
+              </div>
+            </div>
+            <button type="button" name="actual" id="actual">Fecha Actual</button>
+            <div class="icons">
+              <span id="prev" class="symbols-arrows">chevron_left</span>
+              <span id="next" class="symbols-arrows">chevron_right</span>
+            </div>
+          </div>
+          <div class="calendar">
+            <ul class="weeks">
+              <li>Lun</li>
+              <li>Mar</li>
+              <li>Mie</li>
+              <li>Jue</li>
+              <li>Vie</li>
+              <li>Sab</li>
+              <li>Dom</li>
+            </ul>
+            <ul class="days"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="preportada" id="preportadaid">
+        <h2>EVENTOS</h2><br>
+        <ul class="ulpreportada">
+          <li>Nombre del evento 1
+            <div class="ulfecha">01/06/2023</div>
+          </li>
+          <li>Nombre del evento 2
+            <div class="ulfecha">01/06/2023</div>
+          </li>
+          <li>Nombre del evento 3
+            <div class="ulfecha">02/06/2023</div>
+          </li>
+          <li>Nombre del evento 4
+            <div class="ulfecha">04/07/2023</div>
+          </li>
+          <li>Nombre del evento 5
+            <div class="ulfecha">09/10/2023</div>
+          </li>
+          <li>Nombre del evento 6
+            <div class="ulfecha">06/11/2023 - 21/12/2023</div>
+          </li>
+          <li>Nombre del evento 7
+            <div class="ulfecha">16/11/2023</div>
+          </li>
+          <li>Nombre del evento 8
+            <div class="ulfecha">20/11/2023 - 24/11/2023</div>
+          </li>
+          <li>Nombre del evento 9
+            <div class="ulfecha">28/11/2023</div>
+          </li>
+          <li>Nombre del evento 10
+            <div class="ulfecha">01/12/2023</div>
+          </li>
+          <li>Nombre del evento 11
+            <div class="ulfecha">12/12/2023</div>
+          </li>
+          <li>Nombre del evento 12
+            <div class="ulfecha">22/12/2023</div>
+          </li>
+          <li>Nombre del evento 13
+            <div class="ulfecha">18/01/2024</div>
+          </li>
+          <li>Nombre del evento 14
+            <div class="ulfecha">25/01/2024 - 26/01/2024</div>
+          </li>
+          <li>Nombre del evento 15
+            <div class="ulfecha">08/02/2024</div>
+          </li>
+          <li>Nombre del evento 16
+            <div class="ulfecha">20/03/2024</div>
+          </li>
+        </ul>
+        <div class="divpreportada">
+          Para saber m&aacute;s presione el <div class="circlepreport"></div> en el "Calendario".<br>
+          <br>
+          Haga click en la nota para desplegar la informaci&oacute;n.
+        </div>
+      </div>
+      <div class="notitnovisible" id="notitas">
+        <button type="button" id="buttonVolver" onclick="handleElementClick('')">Volver Atr&aacute;s</button>
+        <div id="eventos">
+          <div class="dias_uno" id="event1">
+            <p class="titudia">Festival Gastronómico "Sabores del Mundo"</p>
+            <br>
+            <p class="textcont">
+              Un recorrido culinario donde chefs locales e internacionales presentan 
+              platos de diferentes culturas, acompañados de música y actividades para 
+              toda la familia.
+            </p><br>
+            <p class="fechass">
+              Fecha: 01/06/2023
+            </p>
+          </div><br>
+          <div class="dias_uno" id="event2">
+            <p class="titudia">Maratón Urbano "Ciudad en Movimiento"</p><br>
+            <p class="textcont">
+              Un maratón anual que recorre los lugares más emblemáticos de la ciudad, 
+              con categorías para todas las edades y niveles de experiencia. 
+            </p><br>
+            <p class="fechass">
+              Fecha: 01/06/2023
+            </p>
+          </div>
+          <div class="dias_uno" id="event3">
+            <p class="titudia">Feria de Arte y Artesanía "Manos Creativas"</p><br>
+            <p class="textcont">
+              Una exposición de artistas y artesanos locales que muestran y venden 
+              sus creaciones, desde pintura y escultura hasta joyería y textiles.
+            </p><br>
+            <p class="fechass">
+              Fecha: 02/06/2023
+            </p>
+          </div>
+          <div class="dias_uno" id="event4">
+            <p class="titudia">Concierto al Aire Libre "Notas Bajo las Estrellas"</p>
+            <br>
+            <p class="textcont">
+              Un evento musical nocturno en un parque central, donde bandas locales y 
+              nacionales tocan en un ambiente relajado al aire libre.
+            </p><br>
+            <p class="fechass">
+              Fecha: 04/07/2023
+            </p>
+          </div>
+          <div class="dias_uno" id="event5">
+            <p class="titudia">Ciclo de Cine "Pantalla Urbana"</p>
+            <br>
+            <p class="textcont">
+              Proyecciones de películas al aire libre en diferentes plazas 
+              de la ciudad, con una selección de cine independiente y clásico.
+            </p><br>
+            <p class="fechass">
+              Fecha: 09/10/2023
+            </p>
+          </div>
+          <div class="dias_uno" id="event6">
+            <p class="titudia">Mercado Nocturno "Sabor y Color"</p>
+            <br>
+            <p class="textcont">
+              Un mercado al aire libre que abre solo de noche, donde se puede encontrar 
+              comida callejera, artesanías y música en vivo.
+            </p><br>
+            <p class="fechass">
+              Fecha: 06/11/2023 - 21/12/2023
+            </p>
+          </div>
+          <div class="dias_uno" id="event7">
+            <p class="titudia">Semana de la Moda "Pasarelas del Futuro"</p>
+            <br>
+            <p class="textcont">
+              Desfiles de moda que presentan las últimas tendencias de diseñadores 
+              locales, con exposiciones y charlas sobre sostenibilidad en la industria.
+            </p><br>
+            <p class="fechass">
+              Fecha: 16/11/2023
+            </p>
+          </div>
+          <div class="dias_uno" id="event8">
+            <p class="titudia">Competencia de Fotografía "Enfoca la Ciudad"</p>
+            <br>
+            <p class="textcont">
+              Un concurso donde fotógrafos, tanto amateurs como profesionales, capturan la 
+              esencia de la ciudad. Las mejores fotos se exhiben en una galería pública.
+            </p><br>
+            <p class="fechass">
+              Fecha: 20/11/2023 - 24/11/2023
+            </p>
+          </div>
+          <div class="dias_uno" id="event9">
+            <p class="titudia">Festival de Teatro "Escena Abierta"</p>
+            <br>
+            <p class="textcont">
+              Presentaciones de teatro en diferentes puntos de la ciudad, desde plazas hasta teatros 
+              tradicionales, con obras que van desde clásicos hasta producciones contemporáneas.
+            </p><br>
+            <p class="fechass">
+              Fecha: 28/11/2023
+            </p>
+          </div>
+          <div class="dias_uno" id="event10">
+            <p class="titudia">Carrera de Ciclismo "Pedalea la Historia"</p>
+            <br>
+            <p class="textcont">
+              Una carrera en bicicleta que sigue una ruta histórica a través de 
+              la ciudad, destacando monumentos y puntos de interés cultural.
+            </p><br>
+            <p class="fechass">
+              Fecha: 01/12/2023
+            </p>
+          </div>
+          <div class="dias_uno" id="event11">
+            <p class="titudia">Feria del Libro "Páginas Abiertas"</p>
+            <br>
+            <p class="textcont">
+              Un evento donde editoriales y autores locales presentan sus 
+              obras, con charlas, firmas de libros y talleres de escritura.
+            </p><br>
+            <p class="fechass">
+              Fecha: 12/12/2023
+            </p>
+          </div>
+          <div class="dias_uno" id="event12">
+            <p class="titudia">Festival de Música "Ritmos del Mundo"</p>
+            <br>
+            <p class="textcont">
+              Un fin de semana dedicado a la música, con escenarios en diferentes 
+              puntos de la ciudad que presentan desde rock hasta música folclórica.
+            </p><br>
+            <p class="fechass">
+              Fecha: 22/12/2023
+            </p>
+          </div>
+          <div class="dias_uno" id="event13">
+            <p class="titudia">Jornada de Voluntariado "Manos Solidarias"</p>
+            <br>
+            <p class="textcont">
+              Un día donde los ciudadanos se unen para realizar actividades de voluntariado en diferentes barrios, 
+              como limpieza de parques, pintura de murales y apoyo a comunidades vulnerables.
+            </p><br>
+            <p class="fechass">
+              Fecha: 18/01/2024
+            </p>
+          </div>
+          <div class="dias_uno" id="event14">
+            <p class="titudia">Desfile de Mascotas "Amigos Peludos"</p>
+            <br>
+            <p class="textcont">
+              Un evento divertido donde los dueños desfilan con sus mascotas disfrazadas, con premios para 
+              los trajes más creativos y stands de productos para animales.
+            </p><br>
+            <p class="fechass">
+              Fecha: 25/01/2024 - 26/01/2024
+            </p>
+          </div>
+          <div class="dias_uno" id="event15">
+            <p class="titudia">Exposición de Innovación "Ciudad del Futuro"</p>
+            <br>
+            <p class="textcont">
+              Una muestra interactiva de las últimas innovaciones tecnológicas y urbanísticas, con stands de 
+              empresas y universidades que muestran proyectos futuristas.
+            </p><br>
+            <p class="fechass">
+              Fecha: 08/02/2024
+            </p>
+          </div>
+          <div class="dias_uno" id="event16">
+            <p class="titudia">Torneo de Deportes Urbanos "Desafío en la Ciudad"</p>
+            <br>
+            <p class="textcont">
+              Competencias de deportes urbanos como skateboarding, parkour, y street basketball, 
+              con exhibiciones y talleres para los jóvenes.
+            </p><br>
+            <p class="fechass">
+              Fecha: 20/03/2024
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="f1">
+      <img src="imagenes/acces.png" alt="accesibilidad ">
+      <p class="dire">Accesibilidad:</p>
+      <p class="dire">AAA HTML5</p>
+    </div>
+    <div class="f2">
+      <p><a  class="links">Aviso legal</a></p>
+      <p><a  class="links">Protecci&oacute;n de datos</a></p>
+      <p><a  href = "https://gabrielzimpi.github.io/portafolio/" class="links">Volver</a> </p>
+    </div>
+
+    <div class="f3">
+      <p class="links">Contacto:</p>
+      <p class="dire">000 00 00 00</p>
+      <p class="dire">111 00 00 00</p>
+      <p class="dire">222 00 00 00</p>
+    </div>
+  </footer>
+  <script src="js/index_script.js"></script>
+  <script src="js/notitas_script.js" defer></script>
+</body>
+</html>
